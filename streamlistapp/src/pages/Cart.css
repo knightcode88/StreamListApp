@@ -1,0 +1,36 @@
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cart-items-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.empty-cart {
+  background: #161b22;
+  border: 2px dashed #30363d;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.empty-cart p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.text-muted {
+  color: #8b949e;
+}
+
+@media (max-width: 768px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
