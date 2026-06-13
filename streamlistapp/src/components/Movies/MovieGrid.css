@@ -1,20 +1,25 @@
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
-  width: 100%;
+  margin-top: 2rem;
 }
 
-.no-movies {
-  grid-column: 1 / -1;
-  text-align: center;
-  color: #8b949e;
-  padding: 2rem;
+@media (max-width: 1200px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
