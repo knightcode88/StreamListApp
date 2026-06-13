@@ -1,27 +1,23 @@
-import { useState } from "react";
+import { useEffect } from 'react';
+import StreamListComponent from '../components/StreamList/StreamList';
+import { useStreamList } from '../hooks/useStreamList';
+import { storageService } from '../services/storage';
 
-export default function StreamList() {
-  const [item, setItem] = useState("");
+export default function StreamListPage() {
+  const { streamList, addStream, removeStream } = useStreamList();
 
-  const addItem = (e) => {
-    e.preventDefault();
-    if (!item.trim()) return;
-    console.log("Added:", item);
-    setItem("");
-  };
+  // Save to local storage whenever stream list changes
+  useEffect(() => {
+    storageService.saveStreamList(streamList);
+  }, [streamList]);
 
   return (
-    <>
-      <h2><span className="material-symbols-outlined">queue_music</span> Your StreamList</h2>
-      <form onSubmit={addItem}>
-        <input
-          value={item}
-          onChange={(e) => setItem(e.target.value)}
-          placeholder="Add a new movie or show."
-        />
-        <button type="submit">Add</button>
-      </form>
-      <p>Under construction - content will appear soon!</p>
-    </>
+    <div className="page-container">
+      <StreamListComponent
+        items={streamList}
+        onAdd={addStream}
+        onRemove={removeStream}
+      />
+    </div>
   );
 }

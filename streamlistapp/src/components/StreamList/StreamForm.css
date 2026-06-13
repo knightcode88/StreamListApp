@@ -1,0 +1,15 @@
+.stream-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.stream-form input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.stream-form button {
+  padding: 0.5rem 1rem;
+}

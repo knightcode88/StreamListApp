@@ -1,0 +1,29 @@
+.stream-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #161b22;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  gap: 1rem;
+}
+
+.stream-item-title {
+  flex: 1;
+  word-break: break-word;
+}
+
+.stream-item-remove {
+  padding: 0.25rem 0.75rem;
+  background: #da3633;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.stream-item-remove:hover {
+  background: #f85149;
+}
